@@ -62,7 +62,7 @@ int linearSearch(int arr[], int n, int target) {
 
 int main() {
     int arr[] = {5, 3, 8, 4, 2};
-    int n = sizeof(arr) / sizeof(arr[0]); // Calculate the size of the array
+    int n = arr.size()
     int target = 2;
     int index = linearSearch(arr, n, target);
     if (index != -1) {
@@ -81,7 +81,7 @@ Element found at index: 4
 ```
 
 ### Example 2: Linear Search in a List of Strings
-```java
+```cpp
 #include <iostream>
 #include <vector>
 #include <string>
@@ -134,7 +134,6 @@ Node* linearSearch(Node* head, int target) {
 }
 
 int main() {
-    // Creating a sample linked list
     Node* head = new Node(3);
     head->next = new Node(7);
     head->next->next = new Node(11);
