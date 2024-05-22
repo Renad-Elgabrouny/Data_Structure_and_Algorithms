@@ -44,7 +44,7 @@ Linear search, also known as sequential search, is one of the simplest search al
 - Inefficient for large datasets.
 - Time complexity is linear, which can be slow compared to more advanced algorithms like binary search.
 
-## Java Examples
+## C++ Examples
 
 ### Example 1: Linear Search in an Array
 
