@@ -8,7 +8,6 @@
 5. [C++ Examples](#C++-examples)
     - [Example 1: Binary Search in an Array](#example-1-linear-search-in-an-array)
     - [Example 2: Binary Search in a List of Strings](#example-2-linear-search-in-a-list-of-strings)
-    - [Example 3: Binary Search in a Linked List](#example-3-linear-search-in-a-linked-list)
 6. [Summary](#summary)
 
 ## Introduction
@@ -123,99 +122,5 @@ int main() {
 ```markdown
 Element found at index: 2
 ```
-
-### Example 3: Binary Search in a Linked List
-```cpp
-#include <stdio.h>
-#include <stdlib.h>
-
-struct Node {
-    int data;
-    struct Node* next;
-};
-
-Node* newNode(int x)
-{
-    struct Node* temp = new Node;
-    temp->data = x;
-    temp->next = NULL;
-    return temp;
-}
-
-// function to find out middle element
-struct Node* middle(Node* start, Node* last)
-{
-    if (start == NULL)
-        return NULL;
-
-    struct Node* slow = start;
-    struct Node* fast = start->next;
-
-    while (fast != last) {
-        fast = fast->next;
-        if (fast != last) {
-            slow = slow->next;
-            fast = fast->next;
-        }
-    }
-
-    return slow;
-}
-
-// Function for implementing the Binary
-// Search on linked list
-struct Node* binarySearch(Node* head, int value)
-{
-    struct Node* start = head;
-    struct Node* last = NULL;
-
-    do {
-        // Find middle
-        Node* mid = middle(start, last);
-
-        // If middle is empty
-        if (mid == NULL)
-            return NULL;
-
-        // If value is present at middle
-        if (mid->data == value)
-            return mid;
-
-        // If value is more than mid
-        else if (mid->data < value)
-            start = mid->next;
-
-        // If the value is less than mid.
-        else
-            last = mid;
-
-    } while (last == NULL || last != start);
-
-    // value not present
-    return NULL;
-}
-
-// Driver Code
-int main()
-{
-    Node* head = newNode(1);
-    head->next = newNode(4);
-    head->next->next = newNode(7);
-    head->next->next->next = newNode(8);
-    head->next->next->next->next = newNode(9);
-    head->next->next->next->next->next = newNode(10);
-    int value = 7;
-    if (binarySearch(head, value) == NULL)
-        printf("Value not present\n");
-    else
-        printf("Present");
-    return 0;
-}
-```
-#### Output:
-```markdown
-Present
-```
-
 ## Summary
 Binary search is a powerful and efficient search algorithm for finding elements in a sorted list. Its logarithmic time complexity makes it much faster than linear search for large datasets. However, it requires the dataset to be sorted and can be more complex to implement. Despite these limitations, its efficiency makes it an invaluable tool in computer science and programming.
