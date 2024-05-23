@@ -5,7 +5,7 @@
 2. [Key Concepts](#key-concepts)
 3. [How It Works](#how-it-works)
 4. [Pros and Cons](#pros-and-cons)
-5. [C++ Examples](#java-examples)
+5. [C++ Examples](#C++-examples)
     - [Example 1: Linear Search in an Array](#example-1-linear-search-in-an-array)
     - [Example 2: Linear Search in a List of Strings](#example-2-linear-search-in-a-list-of-strings)
     - [Example 3: Linear Search in a Linked List](#example-3-linear-search-in-a-linked-list)
