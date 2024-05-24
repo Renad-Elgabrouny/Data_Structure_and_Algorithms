@@ -25,11 +25,17 @@ Jump search is an algorithm for searching ordered lists. It works by dividing th
 
 ## How It Works
 
+
 1.Start from the first element.
+
 2.Jump ahead by a fixed number of steps (typically the square root of the total number of elements).
+
 3.Compare the current element with the target.
+
 4.If the current element is greater than the target or if the end of the list is reached, perform a linear search within the previous block.
+
 5.If the current element matches the target, return its index.
+
 6.Repeat steps 2-5 until the element is found or the end of the list is reached.
 
 ## Pros and Cons
