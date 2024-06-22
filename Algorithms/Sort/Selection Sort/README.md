@@ -66,7 +66,7 @@ int main() {
 ### Expected Output:
 
 ``` markdown 
-Sorted array is: 11 12 22 25 64
+2 3 5 6 10
 ```
 ## Conclusion
 Selection sort is an educational algorithm suitable for small datasets or when simplicity is more critical than performance. Despite its inefficiencies, understanding selection sort helps build a foundational understanding of sorting algorithms.
