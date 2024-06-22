@@ -23,37 +23,44 @@ O(1) (in-place sorting)
 ## C++ Implementation
 
 ```cpp
-Copy code
 #include <iostream>
 #include <vector>
-#include <algorithm> // For std::swap
 
-void selection_sort(std::vector<int>& arr) {
-    int n = arr.size();
-    for (int i = 0; i < n - 1; ++i) {
-        // Find the minimum element in the remaining unsorted array
-        int min_index = i;
-        for (int j = i + 1; j < n; ++j) {
-            if (arr[j] < arr[min_index]) {
-                min_index = j;
-            }
+// Function to find the index of the smallest element in the array
+int findSmallest(const std::vector<int>& arr) {
+    int smallest = arr[0];  // Stores the smallest value
+    int smallest_index = 0; // Stores the index of the smallest value
+    for (int i = 1; i < arr.size(); ++i) {
+        if (arr[i] < smallest) {
+            smallest = arr[i];
+            smallest_index = i;
         }
-        // Swap the found minimum element with the first element of the unsorted array
-        std::swap(arr[i], arr[min_index]);
     }
+    return smallest_index;
+}
+
+// Function to sort the array using selection sort algorithm
+vector<int> selectionSort(std::vector<int> arr) {
+    vector<int> newArr;
+    int n = arr.size();
+    for (int i = 0; i < n; ++i) {
+        int smallest = findSmallest(arr);
+        newArr.push_back(arr[smallest]);
+        arr.erase(arr.begin() + smallest);
+    }
+    return newArr;
 }
 
 int main() {
-    std::vector<int> arr = {64, 25, 12, 22, 11};
-    selection_sort(arr);
-    std::cout << "Sorted array is: ";
-    for (int num : arr) {
-        std::cout << num << " ";
+    vector<int> arr = {5, 3, 6, 2, 10};
+    vector<int> sortedArr = selectionSort(arr);
+    for (int num : sortedArr) {
+        cout << num << " ";
     }
-    std::cout << std::endl;
-    // Output: Sorted array is: 11 12 22 25 64
+    cout << std::endl;
     return 0;
 }
+
 ```
 
 ### Expected Output:
